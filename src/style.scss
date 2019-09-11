@@ -3,7 +3,7 @@ $blocksize: 100px;
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, $blocksize);
-	grid-gap: 1px;
+  grid-gap: 1px;
   justify-content: center;
 
   @for $i from 1 through 31 {
@@ -27,7 +27,7 @@ $blocksize: 100px;
     }
   }
 
-  & div:hover {
+  &div:hover {
   	background-color: pink;
   	cursor: pointer;
     transform: translateY(-20px)
@@ -37,13 +37,13 @@ $blocksize: 100px;
 $startWeek: 1;
 @each $dayOfWeek in mon, tue, wed, thu, fri, sat, sun {
   .calendar-#{$dayOfWeek} > div:nth-child(1) {
-    grid-column-start: #{$startWeek};
+  grid-column-start: #{$startWeek};
   }
   $startWeek: $startWeek + 1;
 }
 
 @for $i from 28 through 30 {
   .calendar-#{$i} > div:nth-child(#{$i}) ~ div {
-    display: none;
+  display: none;
   }
 }
