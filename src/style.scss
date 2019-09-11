@@ -1,5 +1,10 @@
 $blocksize: 100px;
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, $blocksize);
@@ -22,8 +27,6 @@ $blocksize: 100px;
     div:nth-child(#{$i})::after {
     content: "#{$i}";
     line-height: $blocksize;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
     }
   }
 
@@ -33,9 +36,9 @@ $blocksize: 100px;
     transform: translateY(-20px)
   }
 }
-
+$week: (mon, tue, wed, thu, fri, sat, sun);
 $startWeek: 1;
-@each $dayOfWeek in mon, tue, wed, thu, fri, sat, sun {
+@each $dayOfWeek in $week {
   .calendar-#{$dayOfWeek} > div:nth-child(1) {
   grid-column-start: #{$startWeek};
   }
